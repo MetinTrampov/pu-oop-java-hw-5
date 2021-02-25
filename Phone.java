@@ -14,6 +14,9 @@ public class Phone extends JFrame {
     int borders = 2;
     int countBoxes = 64;
 
+    /**
+     * Method which opens Java window
+     */
     public Phone() {
         this.setSize(800, 1500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,6 +27,9 @@ public class Phone extends JFrame {
         this.setContentPane(board);
     }
 
+    /**
+     *Method that draw a board of pixels
+     */
     public class Board extends JPanel {
         public void paint(Graphics g) {
             g.fillRect(0, 0, 800, 800);
@@ -47,6 +53,9 @@ public class Phone extends JFrame {
         }
     }
 
+    /**
+     * Method which have to make broken pixels on board ,  but still don't working :(
+     */
     private class Tile extends StackPane {
         private int x, y;
         private boolean hasBrokenPixel;
@@ -74,6 +83,9 @@ public class Phone extends JFrame {
             setOnMouseClicked(e -> open());
         }
 
+        /**
+         * Method which caches click from  consumer and tell him if he find a broken pixel or not .
+         */
         public void open() {
             if (isOpen)
                 return;
@@ -89,7 +101,7 @@ public class Phone extends JFrame {
             border.setFill(null);
 
             if (text.getText().isEmpty()) {
-               
+
             }
         }
 
